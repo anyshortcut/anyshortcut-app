@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,8 +11,22 @@
 		4C423F6F23A7E16E00584455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C423F6E23A7E16E00584455 /* ViewController.swift */; };
 		4C423F7123A7E17000584455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C423F7023A7E17000584455 /* Assets.xcassets */; };
 		4C423F7423A7E17000584455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C423F7223A7E17000584455 /* Main.storyboard */; };
+		6458F52C24250B9A007671C4 /* ShortcutsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F52B24250B9A007671C4 /* ShortcutsManager.swift */; };
+		6458F52F24250CC8007671C4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F52E24250CC8007671C4 /* Models.swift */; };
+		6458F53124251442007671C4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F53024251442007671C4 /* Storage.swift */; };
+		6458F53924251D97007671C4 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F53824251D97007671C4 /* ModelTests.swift */; };
 		C148D9C71B288A9809D6D344 /* Pods_anyshortcut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F702EC35A7CB7B5737C52F56 /* Pods_anyshortcut.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6458F53B24251D97007671C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C423F6123A7E16E00584455 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C423F6823A7E16E00584455;
+			remoteInfo = anyshortcut;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1FB2A046287A62C3CBBF6432 /* Pods-anyshortcut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anyshortcut.debug.xcconfig"; path = "Target Support Files/Pods-anyshortcut/Pods-anyshortcut.debug.xcconfig"; sourceTree = "<group>"; };
@@ -23,6 +37,12 @@
 		4C423F7323A7E17000584455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C423F7523A7E17000584455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C423F7623A7E17000584455 /* anyshortcut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = anyshortcut.entitlements; sourceTree = "<group>"; };
+		6458F52B24250B9A007671C4 /* ShortcutsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsManager.swift; sourceTree = "<group>"; };
+		6458F52E24250CC8007671C4 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		6458F53024251442007671C4 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		6458F53624251D97007671C4 /* anyshortcutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = anyshortcutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6458F53824251D97007671C4 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		6458F53A24251D97007671C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC2BC1426D8407587B74ABB /* Pods-anyshortcut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anyshortcut.release.xcconfig"; path = "Target Support Files/Pods-anyshortcut/Pods-anyshortcut.release.xcconfig"; sourceTree = "<group>"; };
 		F702EC35A7CB7B5737C52F56 /* Pods_anyshortcut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_anyshortcut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -33,6 +53,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C148D9C71B288A9809D6D344 /* Pods_anyshortcut.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6458F53324251D97007671C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				4C423F6B23A7E16E00584455 /* anyshortcut */,
+				6458F53724251D97007671C4 /* anyshortcutTests */,
 				4C423F6A23A7E16E00584455 /* Products */,
 				BC262975E76B41DF0298495F /* Pods */,
 				08CE4260C91568B07DA8ADA2 /* Frameworks */,
@@ -61,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				4C423F6923A7E16E00584455 /* anyshortcut.app */,
+				6458F53624251D97007671C4 /* anyshortcutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4C423F6C23A7E16E00584455 /* AppDelegate.swift */,
+				6458F52D24250BF9007671C4 /* Model */,
 				4C423F6E23A7E16E00584455 /* ViewController.swift */,
 				4C423F7023A7E17000584455 /* Assets.xcassets */,
 				4C423F7223A7E17000584455 /* Main.storyboard */,
@@ -78,13 +108,31 @@
 			path = anyshortcut;
 			sourceTree = "<group>";
 		};
+		6458F52D24250BF9007671C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6458F53024251442007671C4 /* Storage.swift */,
+				6458F52E24250CC8007671C4 /* Models.swift */,
+				6458F52B24250B9A007671C4 /* ShortcutsManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6458F53724251D97007671C4 /* anyshortcutTests */ = {
+			isa = PBXGroup;
+			children = (
+				6458F53824251D97007671C4 /* ModelTests.swift */,
+				6458F53A24251D97007671C4 /* Info.plist */,
+			);
+			path = anyshortcutTests;
+			sourceTree = "<group>";
+		};
 		BC262975E76B41DF0298495F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				1FB2A046287A62C3CBBF6432 /* Pods-anyshortcut.debug.xcconfig */,
 				CEC2BC1426D8407587B74ABB /* Pods-anyshortcut.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,18 +158,40 @@
 			productReference = 4C423F6923A7E16E00584455 /* anyshortcut.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6458F53524251D97007671C4 /* anyshortcutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6458F53D24251D97007671C4 /* Build configuration list for PBXNativeTarget "anyshortcutTests" */;
+			buildPhases = (
+				6458F53224251D97007671C4 /* Sources */,
+				6458F53324251D97007671C4 /* Frameworks */,
+				6458F53424251D97007671C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6458F53C24251D97007671C4 /* PBXTargetDependency */,
+			);
+			name = anyshortcutTests;
+			productName = anyshortcutTests;
+			productReference = 6458F53624251D97007671C4 /* anyshortcutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4C423F6123A7E16E00584455 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = anyshortcut;
 				TargetAttributes = {
 					4C423F6823A7E16E00584455 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					6458F53524251D97007671C4 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 4C423F6823A7E16E00584455;
 					};
 				};
 			};
@@ -139,6 +209,7 @@
 			projectRoot = "";
 			targets = (
 				4C423F6823A7E16E00584455 /* anyshortcut */,
+				6458F53524251D97007671C4 /* anyshortcutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -150,6 +221,13 @@
 			files = (
 				4C423F7123A7E17000584455 /* Assets.xcassets in Resources */,
 				4C423F7423A7E17000584455 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6458F53424251D97007671C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,12 +280,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6458F52C24250B9A007671C4 /* ShortcutsManager.swift in Sources */,
 				4C423F6F23A7E16E00584455 /* ViewController.swift in Sources */,
+				6458F52F24250CC8007671C4 /* Models.swift in Sources */,
 				4C423F6D23A7E16E00584455 /* AppDelegate.swift in Sources */,
+				6458F53124251442007671C4 /* Storage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6458F53224251D97007671C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6458F53924251D97007671C4 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6458F53C24251D97007671C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C423F6823A7E16E00584455 /* anyshortcut */;
+			targetProxy = 6458F53B24251D97007671C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4C423F7223A7E17000584455 /* Main.storyboard */ = {
@@ -374,6 +471,46 @@
 			};
 			name = Release;
 		};
+		6458F53E24251D97007671C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = anyshortcutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anyshortcut.anyshortcutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/anyshortcut.app/Contents/MacOS/anyshortcut";
+			};
+			name = Debug;
+		};
+		6458F53F24251D97007671C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = anyshortcutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anyshortcut.anyshortcutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/anyshortcut.app/Contents/MacOS/anyshortcut";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -391,6 +528,15 @@
 			buildConfigurations = (
 				4C423F7A23A7E17000584455 /* Debug */,
 				4C423F7B23A7E17000584455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6458F53D24251D97007671C4 /* Build configuration list for PBXNativeTarget "anyshortcutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6458F53E24251D97007671C4 /* Debug */,
+				6458F53F24251D97007671C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
