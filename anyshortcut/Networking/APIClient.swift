@@ -8,19 +8,19 @@ import Siesta
 
 let apiClient = APIClient(environment: .production)
 
-struct Response {
+public struct Response {
     let code: Int
     let message: String
-    let data: Data?
+    let data: JSONConvertible?
 
     init(json: [String: Any]) {
         self.code = json["code"] as? Int ?? -1
         self.message = json["message"] as? String ?? ""
-        self.data = json["data"] as? Data
+        self.data = json["data"] as? JSONConvertible
     }
 }
 
-final class APIClient {
+public final class APIClient {
 
     private let environment: Environment
     private let service: Service
@@ -32,16 +32,20 @@ final class APIClient {
     }
 
     private func configureService() {
+        #if DEBUG
+        LogCategory.enabled = [.network, .pipeline, .observers]
+        #endif
         service.configureTransformer("**", atStage: .model) {
             Response(json: $0.content)
         }
     }
 
     private lazy var loginResource: Resource = { service.resource(environment.loginPath) }()
+    private lazy var allShortcutsResource: Resource = { service.resource(environment.allShortcutsPath) }()
 
 }
 
-extension APIClient {
+public extension APIClient {
 
     func login(with accessToken: String, completion: @escaping (Result<Meta?, APIError>) -> Void) {
         if accessToken.isEmpty {
@@ -54,6 +58,21 @@ extension APIClient {
                 self?.process(resource, event: event, with: completion)
         }
         resource.load()
+    }
+
+    func getAllShortcuts(completion: @escaping (Result<ShortcutStorage?, APIError>) -> Void) {
+        do {
+            let accessToken = try Meta.parse().token
+            let resource = allShortcutsResource
+                .withParam("access_token", accessToken)
+                .withParam("nested", "false")
+                .addObserver(owner: self) { [weak self] (resource, event) in
+                    self?.process(resource, event: event, with: completion)
+            }
+            resource.load()
+        } catch {
+            completion(.failure(.accessTokenRequired))
+        }
     }
 }
 
@@ -76,7 +95,8 @@ private extension APIClient {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do {
-                    if let data = response.data {
+                    if let json = response.data {
+                        let data = try JSONSerialization.data(withJSONObject: json, options: [])
                         let result = try decoder.decode(M.self, from: data)
                         completion(.success(result))
                     } else {

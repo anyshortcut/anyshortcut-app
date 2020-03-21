@@ -8,6 +8,7 @@ import Foundation
 struct Environment {
     let baseURL: String
     let loginPath: String = "/user/login"
+    let allShortcutsPath: String = "/shortcuts/all"
 }
 
 extension Environment {
