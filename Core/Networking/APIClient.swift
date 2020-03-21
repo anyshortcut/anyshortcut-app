@@ -6,8 +6,6 @@
 import Foundation
 import Siesta
 
-let apiClient = APIClient(environment: .production)
-
 public struct Response {
     let code: Int
     let message: String
@@ -22,10 +20,12 @@ public struct Response {
 
 public final class APIClient {
 
+    public static let shared = APIClient(environment: .production)
+
     private let environment: Environment
     private let service: Service
 
-    init(environment: Environment) {
+    private init(environment: Environment) {
         self.environment = environment
         self.service = Service(baseURL: environment.baseURL)
         configureService()

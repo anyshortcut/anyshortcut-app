@@ -4,12 +4,11 @@
 // 
 
 import Foundation
-import MASShortcut
 
 public struct Shortcut: Codable {
 
-    typealias Key = String
-    typealias Domain = String
+    public typealias Key = String
+    public typealias Domain = String
 
     let id: UInt
     let key: Key
@@ -28,13 +27,19 @@ typealias SecondaryShortcutDictionary = [Shortcut.Domain: [Shortcut]]
 
 public struct ShortcutStorage: Storage {
 
-    static var fileName: String { return "anyshortcut.json" }
+    public static var fileName: String { return "anyshortcut.json" }
 
     let primary: PrimaryShortcutArray
     let secondary: SecondaryShortcutDictionary
 }
 
 public struct Meta: Storage {
-    static var fileName: String { return "meta.json" }
-    let token: String
+
+    public static var fileName: String { return "meta.json" }
+
+    public let token: String
+
+    public init(token: String) {
+        self.token = token
+    }
 }
