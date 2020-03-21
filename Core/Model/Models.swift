@@ -10,20 +10,20 @@ public struct Shortcut: Codable {
     public typealias Key = String
     public typealias Domain = String
 
-    let id: UInt
-    let key: Key
-    let url: URL
-    let title: String
-    let comment: String?
-    let domain: Domain
-    let openTimes: Int
-    let createdTime: Date
-    let favicon: URL?
+    public let id: UInt
+    public let key: Key
+    public let url: URL
+    public let title: String
+    public let comment: String?
+    public let domain: Domain
+    public let openTimes: Int
+    public let createdTime: Date
+    public let favicon: URL?
 
 }
 
-typealias PrimaryShortcutArray = [Shortcut]
-typealias SecondaryShortcutDictionary = [Shortcut.Domain: [Shortcut]]
+public typealias PrimaryShortcutArray = [Shortcut]
+public typealias SecondaryShortcutDictionary = [Shortcut.Domain: [Shortcut]]
 
 public struct ShortcutStorage: Storage {
 

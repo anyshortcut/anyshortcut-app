@@ -17,7 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // NSApp.setActivationPolicy(.accessory)
-        testGooglgMonitor()
+
+        ShortcutMonitor.register()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -30,12 +31,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 private extension AppDelegate {
 
-    func testGooglgMonitor() {
-        let shortcut = MASShortcut(keyCode: kVK_ANSI_G, modifierFlags: [.option, .command])
-        let url = URL(string: "https://google.com")!
-        MASShortcutMonitor.shared().register(shortcut, withAction: {
-            print("open \(url)")
-            NSWorkspace.shared.open(url)
-        })
-    }
 }
