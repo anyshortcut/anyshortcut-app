@@ -15,6 +15,10 @@
 		6458F52F24250CC8007671C4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F52E24250CC8007671C4 /* Models.swift */; };
 		6458F53124251442007671C4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F53024251442007671C4 /* Storage.swift */; };
 		6458F53924251D97007671C4 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F53824251D97007671C4 /* ModelTests.swift */; };
+		6458F54124259B01007671C4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F54024259B01007671C4 /* APIClient.swift */; };
+		6458F54424259CD6007671C4 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F54324259CD6007671C4 /* Environment.swift */; };
+		6458F5462425A9EA007671C4 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F5452425A9EA007671C4 /* MainWindowController.swift */; };
+		6458F5482425B372007671C4 /* Resource+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6458F5472425B372007671C4 /* Resource+Error.swift */; };
 		C148D9C71B288A9809D6D344 /* Pods_anyshortcut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F702EC35A7CB7B5737C52F56 /* Pods_anyshortcut.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		6458F53624251D97007671C4 /* anyshortcutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = anyshortcutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6458F53824251D97007671C4 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		6458F53A24251D97007671C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6458F54024259B01007671C4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		6458F54324259CD6007671C4 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		6458F5452425A9EA007671C4 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		6458F5472425B372007671C4 /* Resource+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Error.swift"; sourceTree = "<group>"; };
 		CEC2BC1426D8407587B74ABB /* Pods-anyshortcut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anyshortcut.release.xcconfig"; path = "Target Support Files/Pods-anyshortcut/Pods-anyshortcut.release.xcconfig"; sourceTree = "<group>"; };
 		F702EC35A7CB7B5737C52F56 /* Pods_anyshortcut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_anyshortcut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,7 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				4C423F6C23A7E16E00584455 /* AppDelegate.swift */,
+				6458F54224259B49007671C4 /* Networking */,
 				6458F52D24250BF9007671C4 /* Model */,
+				6458F5452425A9EA007671C4 /* MainWindowController.swift */,
 				4C423F6E23A7E16E00584455 /* ViewController.swift */,
 				4C423F7023A7E17000584455 /* Assets.xcassets */,
 				4C423F7223A7E17000584455 /* Main.storyboard */,
@@ -125,6 +135,16 @@
 				6458F53A24251D97007671C4 /* Info.plist */,
 			);
 			path = anyshortcutTests;
+			sourceTree = "<group>";
+		};
+		6458F54224259B49007671C4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6458F54324259CD6007671C4 /* Environment.swift */,
+				6458F54024259B01007671C4 /* APIClient.swift */,
+				6458F5472425B372007671C4 /* Resource+Error.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		BC262975E76B41DF0298495F /* Pods */ = {
@@ -283,8 +303,12 @@
 				6458F52C24250B9A007671C4 /* ShortcutsManager.swift in Sources */,
 				4C423F6F23A7E16E00584455 /* ViewController.swift in Sources */,
 				6458F52F24250CC8007671C4 /* Models.swift in Sources */,
+				6458F54424259CD6007671C4 /* Environment.swift in Sources */,
+				6458F5482425B372007671C4 /* Resource+Error.swift in Sources */,
 				4C423F6D23A7E16E00584455 /* AppDelegate.swift in Sources */,
 				6458F53124251442007671C4 /* Storage.swift in Sources */,
+				6458F5462425A9EA007671C4 /* MainWindowController.swift in Sources */,
+				6458F54124259B01007671C4 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +470,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anyshortcut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -465,6 +490,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anyshortcut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

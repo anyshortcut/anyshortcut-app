@@ -1,16 +1,22 @@
 PODS:
   - MASShortcut (2.4.0)
+  - Siesta (1.4.3):
+    - Siesta/Core (= 1.4.3)
+  - Siesta/Core (1.4.3)
 
 DEPENDENCIES:
   - MASShortcut
+  - Siesta (~> 1.0)
 
 SPEC REPOS:
   trunk:
     - MASShortcut
+    - Siesta
 
 SPEC CHECKSUMS:
   MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
+  Siesta: 83795fdf6a43232d1d2909e1a3dfb92ab5916d26
 
-PODFILE CHECKSUM: 5e9a6321d9dcbe5e052c487dedea323a6ccc0aa9
+PODFILE CHECKSUM: ba58d6402f70860ed3074fe7e1f29b7130709418
 
 COCOAPODS: 1.8.4

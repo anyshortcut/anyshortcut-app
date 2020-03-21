@@ -10,10 +10,11 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var accessTokenTextField: NSTextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
@@ -22,6 +23,21 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func loginAction(_ sender: Any) {
+        let accessToken = accessTokenTextField.stringValue
+        apiClient.login(with: accessToken) { result in
+            switch result {
+            case .success:
+                do {
+                    try Meta(token: accessToken).persist()
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
 }
 
