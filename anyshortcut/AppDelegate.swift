@@ -7,13 +7,16 @@
 //
 
 import Cocoa
+import Core
 import MASShortcut
+
+let apiClient = APIClient.shared
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        NSApp.setActivationPolicy(.accessory)
+        // NSApp.setActivationPolicy(.accessory)
         testGooglgMonitor()
     }
 

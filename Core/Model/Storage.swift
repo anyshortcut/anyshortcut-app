@@ -5,21 +5,11 @@
 
 import Foundation
 
-protocol Storage: Codable {
+public protocol Storage: Codable {
     static var fileName: String { get }
 }
 
-/// Storage directory
-let storageDirectory: String = {
-    let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
-    let path = (NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first! as NSString).appendingPathComponent(appName)
-    if !FileManager.default.fileExists(atPath: path) {
-        _ = try? FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
-    }
-    return path
-}()
-
-extension Storage {
+public extension Storage {
 
     /// Save to disk
     func persist() throws {
@@ -48,3 +38,13 @@ extension Storage {
         }
     }
 }
+
+/// Storage directory
+let storageDirectory: String = {
+    let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
+    let path = (NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first! as NSString).appendingPathComponent(appName)
+    if !FileManager.default.fileExists(atPath: path) {
+        _ = try? FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+    }
+    return path
+}()
