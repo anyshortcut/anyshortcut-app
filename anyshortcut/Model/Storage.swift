@@ -25,7 +25,13 @@ extension Storage {
     func persist() throws {
         let path = (storageDirectory as NSString).appendingPathComponent(Self.fileName)
         let data = try JSONEncoder().encode(self)
-        try data.write(to: URL(fileURLWithPath: path))
+        do {
+            try data.write(to: URL(fileURLWithPath: path))
+            print("\(Self.self): saved to \(path)")
+        } catch {
+            print("\(Self.self): save failed", "error: \(error)")
+            throw error
+        }
     }
 
     /// Parse from disk

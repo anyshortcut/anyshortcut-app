@@ -39,5 +39,20 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func syncAction(_ sender: Any) {
+        apiClient.getAllShortcuts { result in
+            switch result {
+            case .success(let shortcuts):
+                do {
+                    try shortcuts?.persist()
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
 }
 

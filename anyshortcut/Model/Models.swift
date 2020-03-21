@@ -6,7 +6,7 @@
 import Foundation
 import MASShortcut
 
-struct Shortcut: Codable {
+public struct Shortcut: Codable {
 
     typealias Key = String
     typealias Domain = String
@@ -26,7 +26,7 @@ struct Shortcut: Codable {
 typealias PrimaryShortcutArray = [Shortcut]
 typealias SecondaryShortcutDictionary = [Shortcut.Domain: [Shortcut]]
 
-struct ShortcutStorage: Storage {
+public struct ShortcutStorage: Storage {
 
     static var fileName: String { return "anyshortcut.json" }
 
@@ -34,7 +34,7 @@ struct ShortcutStorage: Storage {
     let secondary: SecondaryShortcutDictionary
 }
 
-struct Meta: Storage {
+public struct Meta: Storage {
     static var fileName: String { return "meta.json" }
     let token: String
 }
