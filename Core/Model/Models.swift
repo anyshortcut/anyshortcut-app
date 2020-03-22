@@ -18,7 +18,7 @@ public struct Shortcut: Codable {
     public let domain: Domain
     public let openTimes: Int
     public let createdTime: Date
-    public let favicon: URL?
+    public let favicon: String?
 
 }
 
