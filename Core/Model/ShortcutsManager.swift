@@ -6,13 +6,13 @@
 import Foundation
 import os.log
 
-final class ShortcutManager {
-    static let shared = ShortcutManager()
+public final class ShortcutManager {
+    public static let shared = ShortcutManager()
 }
 
 // MARK: Fetch
 
-extension ShortcutManager {
+public extension ShortcutManager {
 
     func getPrimaryShortcuts() -> PrimaryShortcutArray {
         do {
